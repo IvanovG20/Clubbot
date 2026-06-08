@@ -2,5 +2,5 @@ class SlotNotAvailableError(Exception):
     pass
 
 
-class BookingNotFoundIgnore(Exception):
+class BookingNotFoundError(Exception):
     pass
