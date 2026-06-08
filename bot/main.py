@@ -6,6 +6,7 @@ from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
 
 from core.config import settings
+from bot.handlers.start import start_router
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,7 +25,7 @@ async def main() -> None:
 
     # TODO: dp.update.middleware(TenantMiddleware())
 
-    # dp.include_router(start_router)  # подключить после создания handlers/start.py
+    dp.include_router(start_router)
 
     logger.info("Starting bot polling...")
     await dp.start_polling(bot)
