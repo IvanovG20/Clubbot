@@ -7,6 +7,7 @@ from aiogram.enums import ParseMode
 
 from core.config import settings
 from bot.handlers.start import start_router
+from bot.middlewares.tenant import TenantMiddleware
 
 logging.basicConfig(
     level=logging.INFO,
