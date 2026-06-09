@@ -22,11 +22,12 @@ async def main() -> None:
         token=settings.bot_token,
         default=DefaultBotProperties(parse_mode=ParseMode.HTML),
     )
-    dp = Dispatcher()
+ dp = Dispatcher()
 
-    # TODO: dp.update.middleware(TenantMiddleware())
+dp.message.middleware(TenantMiddleware())
+dp.callback_query.middleware(TenantMiddleware())
 
-    dp.include_router(start_router)
+dp.include_router(start_router)
 
     logger.info("Starting bot polling...")
     await dp.start_polling(bot)
