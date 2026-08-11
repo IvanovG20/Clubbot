@@ -16,6 +16,8 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+#  Дальше - меньше
+
 
 async def main() -> None:
     bot = Bot(
